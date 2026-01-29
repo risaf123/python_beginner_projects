@@ -3,7 +3,7 @@ import time
 import datetime
 import pygame
 def set_alarm():
-    sound='ayooo-sayip-op.mp3'
+    sound='fire_alarm.mp3'
     is_True=True
     while is_True:
         crt_time=datetime.datetime.now().strftime('%H:%M:%S')
