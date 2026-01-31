@@ -7,7 +7,7 @@ for key,value in menu.items():
     print(key,value)
 print('_________________')
 while True:
-    food=input('enter you =r item(q to quit): ').lower()
+    food=input('enter your item(q to quit): ').lower()
     if food=='q':
         break
     elif menu.get(food) is not None:

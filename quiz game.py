@@ -1,38 +1,45 @@
-#QUIZ GAME USING PYTHON
-questions=(('Which is the tallest animal in the world as of right now?'),
-           ('Is studying engineering at amal jyothi a good option?'),
-           ('Who is the Goat of football?'),
-           ('Which is the fastest animal in the world?'),
-           ('Which is the most decorated programming language in the world?'))
-options=(('A.elephant','B.zebra','C.lion','D.giiraff'),
-         ('yes','no'),
-         ('A.Ronaldo','B.Messi','C.Pele','D.Maradona'),
-         ('A.lion','B.tiger','C.cheetah','D.giiraff'),
-         ('A.c++','B.javascript','C.java','D.python'))
-score=0
-answers=('D','yes','A','C','D')
-gueses=[]
-question_num=0
-for quetion in questions:
+# QUIZ GAME USING PYTHON
+
+questions = (
+    'Which is the tallest animal in the world as of right now?',
+    'Is studying engineering at Amal Jyothi a good option?',
+    'Who is the GOAT of football?',
+    'Which is the fastest animal in the world?',
+    'Which is the most decorated programming language in the world?'
+)
+
+options = (
+    ('A. Elephant', 'B. Zebra', 'C. Lion', 'D. Giraffe'),
+    ('A. Yes', 'B. No'),
+    ('A. Ronaldo', 'B. Messi', 'C. Pele', 'D. Maradona'),
+    ('A. Lion', 'B. Tiger', 'C. Cheetah', 'D. Giraffe'),
+    ('A. C++', 'B. JavaScript', 'C. Java', 'D. Python')
+)
+
+answers = ('D', 'A', 'B', 'C', 'D')  # all answers in single-letter format
+
+score = 0
+guesses = []
+
+for question_num in range(len(questions)):
     print('_____________________')
-    print(quetion)
+    print(questions[question_num])
     for option in options[question_num]:
         print(option)
-    guess=input('enter your guess as(A,B,C,D)').upper()
-    gueses.append(guess)
-    if guess==answers[question_num]:
-        score+=1
-        print('correct' )
+    guess = input('Enter your guess (A/B/C/D): ').upper()
+    guesses.append(guess)
+    if guess == answers[question_num]:
+        score += 1
+        print('Correct!')
     else:
-         print('incorrect')
-         print(f'{answers[question_num]} was correct')
-    question_num+=1
+        print('Incorrect!')
+        print(f'The correct answer was {answers[question_num]}')
+
+# Display results
 print('________________')
 print('RESULTS')
 print('________________')
-print('ANSWERS', end=' ')
-for answer in answers:
-    print(answer,end=' ')
-print()
-score=score/len(questions)*100
-print('score=',score)
+print('Correct Answers:', ' '.join(answers))
+print('Your guesses  :', ' '.join(guesses))
+score_percentage = (score / len(questions)) * 100
+print(f'Score = {score_percentage}%')
